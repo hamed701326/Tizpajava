@@ -1,6 +1,10 @@
-public class EconomicTrip extends Trip{
+package trip;
 
-    public void setDistance1(int distance) {
+import trip.Trip;
+
+public class EconomicTrip extends Trip {
+
+    public void setDistance(int distance) {
         this.distance = distance;
         x = distance *5000;
     }
@@ -16,12 +20,7 @@ public class EconomicTrip extends Trip{
      * "1" is a traffic
      * "2" is a brainy
      */
-
-    public void setTypeCondition(int typeCondition) {
-        this.typeCondition = typeCondition;
-    }
-
-    protected void typeCondition(int typeCondition){
+    protected void typeCondition(){
         if(typeCondition == 0)
             weatherTime.trafficAndWeather(x);
         else if(typeCondition == 1)
@@ -29,7 +28,8 @@ public class EconomicTrip extends Trip{
         else if(typeCondition == 2)
             weather.brainy(x);
     }
-    private double getPrice() {
+    public double getPrice() {
+        typeCondition();
         return price;
     }
 }

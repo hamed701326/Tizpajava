@@ -1,7 +1,9 @@
+package trip;
+
 public class Distance {
     private int origin;
     private int destination;
-    private static int[][] map;
+    private static int[][] map=new int[5][];
 
     {
         map[0] = new int[]{1, 2, 2, 4, 3};
@@ -11,7 +13,7 @@ public class Distance {
         map[4] = new int[]{3, 3, 2, 2, 1};
     }
 
-    Distance(int origin, int destination) {
+    public Distance(int origin, int destination) {
         this.origin = origin;
         this.destination = destination;
     }

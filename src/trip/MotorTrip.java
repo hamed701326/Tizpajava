@@ -1,6 +1,8 @@
-public class MotorTrip extends Trip{
+package trip;
 
-    public void setDistance1(int distance) {
+public class MotorTrip extends Trip {
+
+    public void setDistance(int distance) {
         this.distance = distance;
         x = distance *4000;
     }
@@ -17,11 +19,9 @@ public class MotorTrip extends Trip{
      * "2" is a brainy
      */
 
-    public void setTypeCondition(int typeCondition) {
-        this.typeCondition = typeCondition;
-    }
 
-    protected void typeCondition(int typeCondition){
+
+    protected void typeCondition(){
         if(typeCondition == 0)
             weatherTime.trafficAndWeather(x);
         else if(typeCondition == 1)
@@ -29,7 +29,8 @@ public class MotorTrip extends Trip{
         else if(typeCondition == 2)
             weather.brainy(x);
     }
-    private double getPrice() {
+    public double getPrice() {
+        typeCondition();
         return price;
     }
 }
